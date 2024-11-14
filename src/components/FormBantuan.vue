@@ -2,25 +2,20 @@
   <div>
     <div class="container">
       <div class="logo-container">
-        <!-- Ganti dengan logo Anda -->
         <img src="@/assets/logo.PNG" alt="Logo" class="logo" />
       </div>
       <h1 class="title">Formulir Penerima Bantuan Sosial</h1>
     </div>
     <form @submit.prevent="submitForm">
-      <!-- Input Nama -->
       <label>Nama:</label>
       <input type="text" v-model="form.nama" required />
 
-      <!-- Input NIK -->
       <label>NIK:</label>
       <input type="number" v-model="form.nik" required />
 
-      <!-- Nomor Kartu Keluarga -->
       <label>Nomor Kartu Keluarga:</label>
       <input type="text" v-model="form.nomorKK" required />
 
-      <!-- Foto KTP -->
       <label>Foto KTP (Maks 2MB, JPG/JPEG/PNG/BMP):</label>
       <input
         type="file"
@@ -29,7 +24,6 @@
         required
       />
 
-      <!-- Foto Kartu Keluarga -->
       <label>Foto Kartu Keluarga (Maks 2MB, JPG/JPEG/PNG/BMP):</label>
       <input
         type="file"
@@ -38,18 +32,15 @@
         required
       />
 
-      <!-- Umur -->
       <label>Umur:</label>
       <input type="number" v-model="form.umur" min="1" required />
 
-      <!-- Jenis Kelamin -->
       <label>Jenis Kelamin:</label>
       <select v-model="form.jenisKelamin" required>
         <option value="LakiLaki">Laki-laki</option>
         <option value="Perempuan">Perempuan</option>
       </select>
 
-      <!-- Provinsi -->
       <label>Provinsi:</label>
       <select v-model="form.provinsi" @change="loadKabupaten" required>
         <option
@@ -61,7 +52,6 @@
         </option>
       </select>
 
-      <!-- Kabupaten/Kota -->
       <label>Kabupaten/Kota:</label>
       <select v-model="form.kabupaten" @change="loadKecamatan" required>
         <option
@@ -73,7 +63,6 @@
         </option>
       </select>
 
-      <!-- Kecamatan -->
       <label>Kecamatan:</label>
       <select v-model="form.kecamatan" @change="loadKelurahan" required>
         <option
@@ -85,7 +74,6 @@
         </option>
       </select>
 
-      <!-- Kelurahan/Desa -->
       <label>Kelurahan/Desa:</label>
       <select v-model="form.kelurahan" required>
         <option
@@ -97,15 +85,12 @@
         </option>
       </select>
 
-      <!-- RT -->
       <label>RT:</label>
       <input type="number" v-model="form.rt" required />
 
-      <!-- RW -->
       <label>RW:</label>
       <input type="number" v-model="form.rw" required />
 
-      <!-- Alamat Lengkap dengan Batasan Karakter 255 -->
       <label>Alamat Lengkap:</label>
       <textarea
         v-model="form.alamatLengkap"
@@ -114,15 +99,12 @@
         required
       ></textarea>
 
-      <!-- Penghasilan Sebelum Pandemi -->
       <label>Penghasilan Sebelum Pandemi:</label>
       <input type="number" v-model="form.penghasilanSebelum" required />
 
-      <!-- Penghasilan Setelah Pandemi -->
       <label>Penghasilan Setelah Pandemi:</label>
       <input type="number" v-model="form.penghasilanSetelah" required />
 
-      <!-- Alasan Membutuhkan Bantuan -->
       <label>Alasan Membutuhkan Bantuan:</label>
       <select v-model="form.alasanBantuan" required>
         <option value="kehilangan pekerjaan">Kehilangan Pekerjaan</option>
@@ -131,13 +113,11 @@
         <option value="lainnya">Lainnya</option>
       </select>
 
-      <!-- Alasan Lainnya Jika Diperlukan -->
       <div v-if="form.alasanBantuan === 'lainnya'">
         <label>Alasan Lainnya:</label>
         <input type="text" v-model="form.alasanLainnya" />
       </div>
 
-      <!-- Checkbox Pernyataan -->
       <div class="checkbox-container">
         <input
           type="checkbox"
@@ -152,7 +132,6 @@
         </label>
       </div>
 
-      <!-- Tombol Submit -->
       <button @click="debouncedSubmit" :disabled="isSubmitting">Kirim</button>
     </form>
   </div>
@@ -289,7 +268,7 @@ textarea {
 .logo-container {
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px; /* Memberikan jarak antara logo dan judul */
+  margin-bottom: 20px;
 }
 
 .logo {
