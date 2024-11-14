@@ -52,9 +52,6 @@
         <span>{{ formData.alamatLengkap || "Belum diisi" }}</span>
       </div>
 
-      <!-- Preview Data Lainnya Tetap Sama -->
-
-      <!-- Foto KTP -->
       <div class="preview-item">
         <strong>Foto KTP:</strong>
         <img
@@ -66,7 +63,6 @@
         <span v-else>Belum ada foto KTP</span>
       </div>
 
-      <!-- Foto Kartu Keluarga -->
       <div class="preview-item">
         <strong>Foto Kartu Keluarga:</strong>
         <img
